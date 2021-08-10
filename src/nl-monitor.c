@@ -33,6 +33,7 @@ static const struct {
 	{ RTNLGRP_IPV6_NETCONF, "ipv6-netconf" },
 	{ RTNLGRP_MPLS_NETCONF, "mpls-netconf" },
 	{ RTNLGRP_MDB, "mdb" },
+	{ RTNLGRP_BRVLAN, "bridge-vlan" },
 	{ RTNLGRP_NONE, NULL }
 };
 

@@ -1367,5 +1367,18 @@ global:
 
 libnl_3_12 {
 global:
+	rtnl_bridge_vlan_alloc;
+	rtnl_bridge_vlan_alloc_cache;
+	rtnl_bridge_vlan_alloc_cache_flags;
+	rtnl_bridge_vlan_build_change_request;
+	rtnl_bridge_vlan_change;
+	rtnl_bridge_vlan_get;
+	rtnl_bridge_vlan_get_ifindex;
+	rtnl_bridge_vlan_get_state;
+	rtnl_bridge_vlan_get_vlan_id;
+	rtnl_bridge_vlan_put;
+	rtnl_bridge_vlan_set_ifindex;
+	rtnl_bridge_vlan_set_state;
+	rtnl_bridge_vlan_set_vlan_id;
 	rtnl_nh_get_oif;
 } libnl_3_11;

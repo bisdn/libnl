@@ -1069,7 +1069,7 @@ restart:
 		NL_DBG(2, "Updating cache %p <%s> for family %u, request sent, waiting for reply\n",
 		       cache, nl_cache_name(cache), grp ? grp->ag_family : AF_UNSPEC);
 
-		err = nl_cache_pickup(sk, cache);
+		err = nl_cache_pickup_checkdup(sk, cache);
 		if (err == -NLE_DUMP_INTR) {
 			NL_DBG(2, "Dump interrupted, restarting!\n");
 			goto restart;

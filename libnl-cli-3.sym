@@ -127,3 +127,10 @@ global:
 	nl_cli_nh_alloc;
 	nl_cli_nh_alloc_cache;
 } libnl_3_2_28;
+
+libnl_3_9 {
+global:
+	nl_cli_bridge_vlan_alloc;
+	nl_cli_bridge_vlan_alloc_cache_flags;
+	nl_cli_bridge_vlan_parse_ifindex;
+} libnl_3_8;

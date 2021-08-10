@@ -79,6 +79,7 @@ test-suite.log
 /src/nl-addr-add
 /src/nl-addr-delete
 /src/nl-addr-list
+/src/nl-bridge-vlan
 /src/nl-class-add
 /src/nl-class-delete
 /src/nl-class-list

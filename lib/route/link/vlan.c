@@ -30,6 +30,16 @@
 #include "nl-route.h"
 #include "link-api.h"
 
+struct rtnl_bridge_vlan {
+	NLHDR_COMMON
+	uint32_t ifindex;
+	uint8_t family;
+
+	uint16_t vlan_id;
+	uint16_t flags;
+	uint8_t state;
+};
+
 /** @cond SKIP */
 #define VLAN_HAS_ID		(1<<0)
 #define VLAN_HAS_FLAGS		(1<<1)
