@@ -13,6 +13,7 @@
  * static struct rtnl_link_info_ops vlan_info_ops = {
  * 	.io_name		= "vlan",
  * 	.io_alloc		= vlan_alloc,
+ * 	.io_clone		= vlan_clone,
  * 	.io_parse		= vlan_parse,
  * 	.io_dump[NL_DUMP_BRIEF]	= vlan_dump_brief,
  * 	.io_dump[NL_DUMP_FULL]	= vlan_dump_full,
