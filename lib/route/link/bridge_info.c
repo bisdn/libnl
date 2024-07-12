@@ -72,6 +72,25 @@ static int bridge_info_alloc(struct rtnl_link *link)
 	return 0;
 }
 
+static int bridge_info_clone(struct rtnl_link *dst, struct rtnl_link *src)
+{
+	struct bridge_info *vdst, *vsrc = src->l_info;
+	int err;
+
+	err = bridge_info_alloc(dst);
+	if (err)
+		return err;
+
+	vdst = dst->l_info;
+
+	if (!vdst || !vsrc)
+		return -NLE_NOMEM;
+
+	memcpy(vdst, vsrc, sizeof(struct bridge_info));
+
+	return 0;
+}
+
 static int bridge_info_parse(struct rtnl_link *link, struct nlattr *data,
 			     struct nlattr *xstats)
 {
@@ -194,6 +213,7 @@ static void bridge_info_free(struct rtnl_link *link)
 static struct rtnl_link_info_ops bridge_info_ops = {
 	.io_name = "bridge",
 	.io_alloc = bridge_info_alloc,
+	.io_clone = bridge_info_clone,
 	.io_parse = bridge_info_parse,
 	.io_put_attrs = bridge_info_put_attrs,
 	.io_free = bridge_info_free,
