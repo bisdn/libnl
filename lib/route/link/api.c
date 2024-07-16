@@ -129,8 +129,7 @@ int rtnl_link_register_info(struct rtnl_link_info_ops *ops)
 {
 	int err = 0;
 
-	if (ops->io_name == NULL)
-		return -NLE_INVAL;
+	BUG_ON(!ops->io_name);
 
 	nl_write_lock(&info_lock);
 	if (__rtnl_link_info_ops_lookup(ops->io_name)) {
