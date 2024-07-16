@@ -131,6 +131,10 @@ int rtnl_link_register_info(struct rtnl_link_info_ops *ops)
 
 	BUG_ON(!ops->io_name);
 
+	NL_DBG(1, "Registering link info operations %s\n", ops->io_name);
+
+	BUG_ON(ops->io_alloc && !(ops->io_free && ops->io_clone));
+
 	nl_write_lock(&info_lock);
 	if (__rtnl_link_info_ops_lookup(ops->io_name)) {
 		err = -NLE_EXIST;
